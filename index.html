@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风尚时装官方网站</title>
+    <link rel="stylesheet" type="text/css" href="css/dibu.css"/>
+    <style>
+        /*下面都是导航栏*/
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-left: 0px; /* 添加这一行 */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        nav {
+				background-color: #f1f1f1;
+				padding: 10px;
+			}
+
+			nav a {
+				text-decoration: none;
+				color: #333333;
+				font-size: 18px;
+				margin-right: 20px;
+			}
+
+			nav a:hover {
+				color: rgb(241, 196, 15);
+			}
+
+			.nav-active {
+				/* background-color: white; */
+                background-color: #777;
+				color: rgb(255, 255, 255);
+			}
+
+            form {
+                display: inline-block;
+            }
+
+            input[type="text"] {
+                  padding: 5px;
+                  font-size: 16px;
+                  border: 1px solid #cccccc;
+                 border-radius: 5px;
+        }
+
+        /*那个搜索的颜色*/
+        button[type="submit"] {
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: rgb(241, 196, 15);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #888888;
+        }
+        
+        /*个人中心的那个图片*/
+        #myImage {
+            width: 40px; /* 修改图片宽度 */
+            height: 40px; /* 修改图片高度 */
+            position: absolute; /* 使用绝对定位 */
+            top: 95px; /* 离顶部距离 */
+            left: 1620px; /* 离左边界距离 */
+        }
+
+        footer p {
+            margin: 0;
+            padding: 5px;
+        }
+        /**/
+        footer p:first-child {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .logo {
+            margin-left: 1rem; /* 根据需要调整距离 */
+            width: 40px; /* 根据需要调整宽度 */
+            height: auto; /* 根据需要调整高度 */
+        }
+
+        
+        .right {/*111111111111111111111111111*/
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0.5rem 0;/*距离*/
+        }
+
+        .right a {
+            margin-right: 20px; /* 设置间距，可以根据需要调整 */
+            color: rgb(85, 85, 85); /* 设置字体颜色为黑色 */
+            text-decoration: none; /* 去掉下划线 */
+        }/*111111111111111111111111111*/
+        
+        /*圆角矩形*/
+        a.yellow-rounded {
+            color:rgb(0, 0, 0);
+            
+            width: 200px;
+            height: 30px;
+            background: rgb(255, 255, 255);
+           
+            line-height: 30px;
+            border-radius: 30px;
+        }
+
+        /*下面都是隐藏目录CSS*/
+        #image {
+            cursor: pointer;
+            margin-left: 10px; /*向左移动*/
+            margin-top: -20px;/*与顶部距离*/
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 50px;/*边框大小*/
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            font-size: 20px;/*字体大小*/
+        }
+
+        /*下面是最底部的那个*/
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            margin-top: 50px; /* 上边距 */
+            margin-bottom: 50px; /* 下边距 */
+        }
+
+        p {
+            line-height: 1.6;
+        }
+        /*.terms {
+            height: 300px;
+            overflow-y: scroll;
+        }*/
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.footer div {
+    width: calc(100% / 3);
+    text-align: center;
+}
+
+.footer div h3 {
+    margin-bottom: 20px;
+}
+
+.footer div a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <a href="个人中心.html"><img src="图片/个人中心/12.png" alt="阿狸" id="myImage"></a>
+    
+    <header>
+        <h1 style="color:rgb(114, 118, 241);"><img class="logo" src="图片/logo/1.apng" alt="Logo"> 风尚时装官方网站</h1>
+        <!-- 添加logo -->
+    </header>
+    <nav>
+			<!-- <a href="#">品牌</a> -->
+			<a class="nav-item" href="2.html">首页</a>
+			<a class="nav-item" href="新品推荐.html">新品推荐</a>
+			<a class="nav-item" href="女士外套.html">女士外套</a>
+			<a class="nav-item" href="女士衬衫.html">女士衬衫</a>
+			<a class="nav-item" href="女士半身裙.html">女士半身裙</a>
+			<a class="nav-item" href="女士配饰.html">女士配饰</a>
+        <form action="搜索.html" method="get">
+            <input type="text" name="query" placeholder="搜索产品...">
+            <button type="submit">搜索</button>
+        </form>
+    </nav>
+    
+    <!--隐藏目录-->
+    <div id="popup">
+        <div id="content">
+            <h3>目录</h3>
+                <li>NEW新品</li><!-- <li><a href="你的链接地址">NEW新品</a></li> -->
+                <li>按品牌搜索</li>
+                <li>按种类搜索</li>
+                <li>热销</li>
+                <li>LOOKBOOK</li>
+                <li>店铺信息</li>
+        </div>
+    </div>
+    
+    <div class="right">
+    <a href="联系我们.html">联系我们</a>
+    <a href="注册界面.html">注册</a>
+    <a href="登陆界面.html">登录</a>
+    <a href="收藏界面.html">❤收藏</a>
+    <a href="购物车.html">🛒购物车</a>
+    </div>
+
+    <!--隐藏目录图片-->
+    <img id="image" src="图片/目录/4.png" width="70" height="25" alt="图像">
+
+    <div class="container">
+        <h1 class="common_headline1_" style="text-align: center;"><!--wovn-src:会員規約-->会员条款</h1>
+<p>在注册新会员之前，请仔细阅读以下条款。​ ​<br>
+</p>
+<form name="agreebody">
+<div name="textarea" class="agreebody_" rows="20" style="overflow: auto; height: 490px" readonly>服务条款<br><br><br>
+    ​​Yohji Yamamoto Inc.（以下简称「本公司」）所营运的网站「THE SHOP YOHJI YAMAMOTO 」之服务条款如下。<br><br>
+    第1条　会员<br><br>“会员”意指同意本公司规定的条款，并申请入会的个人。<br>​“会员信息”意指会员向本公司公开之关于会员属性、会员交易履历等信息 。​​<br>
+    本条款适用于全体会员，当会员完成会员注册手续、或开始使用本服务时，即表示同意接受本服务条款之所有内容。<br><br>
+    第2条　注册<br><br>
+    会员资格<br><br>
+    同意本条款并申请入会的用户，在办理完注册手续后即拥有会员资格。请由申请入会的本人进行会员注册手续，我们不认可由代理方进行的注册。此外，过去被取消过会员资格的申请者、或其他本公司认为不符合会员申请条件的申请者可能会被拒绝入会。​<br><br>
+    输入会员信息<br><br>
+    注册会员前，请仔细阅读条款，于规定栏位输入正确资料。注册会员信息时，不得使用特殊符号、旧汉字、罗马数字等。如果使用这些文字进行注册，本公司将进行更改。​​<br><br>
+    密码仅限会员本人使用，不得转让或出借给第三方。​​<br>
+    为了不让他人知道密码，请定期修改密码，由会员本人负责管理。​​<br>
+    需要输入密码才能执行的操作，均视为会员本人的意志，会员必须承担其产生的费用。​​<br>
+    <br>第3条　退会<br><br>
+    若会员希望退会，请由会员本人办理退会手续。完成规定之退会手续后即可退会。​​<br><br>
+    第4条　丧失会员资格以及赔偿义务<br><br>
+    会员于申请会员资格时使用假资料、网购未完成付款、其他作为会员之不适当的行为，如有以上事项，本公司会撤销其会员资格。若因被取消会员资格造成用户损失，本公司一概不负责。<br>
+    会员如有以下行为，需赔偿本公司的损失。​ ​<br>
+    窜改本公司的网站信息、对本网站发送有害的电脑程式等，<br>
+    妨碍本公司营运之行为 侵害本公司的智慧财产权之行为<br>
+    其他违反使用条款之行为​ ​<br><br>
+    第5条　会员信息的使用和管理<br><br>
+    原则上，未经会员事先同意，本公司不会向第三方披露会员信息。但是，对于以下项目，即使未经会员事先同意，本公司仍会披露会员信息和其他客户信息。​<br>
+    根据法律法规要求披露时<br>
+    本公司判断有必要保护本公司的权利，利益，名誉时<br>
+    在以下集团公司之适当业务范围内相互使用时 Yohji Yamamoto Inc. 2-2-43 Higashi Shinagawa, Shinagawa-Ku Tokyo 140-0002 JAPAN Y'S France 155 rue Saint-Martin 75003 Paris，FRANCE Y’s GB Limited 14/15 Conduit Street，London W1S 2XJ，UK 关于会员信息，将依据本公司的《个人信息保护方针》进行管理。​​<br>
+    为了向会员提供服务、提高服务品质、促进会员对服务的使用以及确保服务健全和顺畅运营，本公司会使用会员信息。 本公司可以透过电子快报或其他方法向会员提供信息（包含广告）。如果会员不希望提供信息，请按照本公司指定的方式通知我们，我们将停止提供信息。但是，于为了营运而需提供的信息，无法按照会员的要求停止。​​<br><br>
+    第6条　禁止事项<br><br>
+    使用本服务时，禁止会员有以下各项行为。​​<br>
+    ・违反法令或本条款、利用本服务的注意事项、于本服务购物的注意事项，以及违反其他条款等行为<br>
+    ・损害本公司或第三人的权利、利益、名誉等行为<br>
+    ・可能会对青少年身心健康造成负面影响的行为、其他违反善良风俗的行为<br>
+    ・对其他用户或第三者造成困扰或不愉快的行为<br>
+    ・输入虚假的信息<br>
+    ・发送或写入有害的电脑程序、邮件等<br>
+    ・非法存取公司伺服器及其他电脑<br>
+    ・将密码出借、转让予第三者，或与第三者共用<br>
+    ・其他本公司判断不适当的行为<br><br>
+    第7条　服务、中断停止等<br><br>
+    为了保持良好的运作状态，当以下其中一种情况发生，本公司将无预警地停止全部或部分的服务。​​<br>
+    需要定期维护系统或紧急维修时<br>
+    系统负荷过于集中时<br>
+    因火灾、停电、第三方干扰行为造成系统运作困难时<br>
+    其他本公司认为不得不停止系统时<br><br>
+    第8条　服务的变更‧废止<br><br>
+    经本公司判断有必要时，可以在不事先通知用户的情形下随时变更、废止本条款。<br><br>
+    第9条　免责声明<br><br>
+    如因通信回路或电脑设备故障造成系统中断・延迟・中止・资料消失、资料被非法存取造成损害、或其他关于因使用本公司的服务而造成用户损失，本公司不承担任何责任。​​<br>
+    本公司对于提供给会员的本服务内容，不保证透过本公司的网页、伺服器或域名等发送的邮件或内容里不包含电脑病毒等有害内容。​​<br>
+    对于因用户违反这些条款和条件而造成的任何损害，我们概不负责。​​<br><br>
+    第10条　本条款的修订<br><br>
+    本公司有权任意修改本条款。此外，本公司可制定补充本条款之条款（以下简称“补充条款”）。对本条款的修改或补充，在修正后会发布于本公司指定的网页上并即刻生效。此种情况下，会员须遵守修改后的条款及补充条款。​​<br><br>
+    第11条　管辖法院<br><br>
+    若用户与本公司针对条款发生争议，以东京地方法院或东京简易法院为第一审专属合意管辖法院。​​<br><br>
+    本条款以日本法为准据法。​​<br><br><br>
+    付则<br><br>
+    本条款自2024年1月5日开始生效
+    </div>
+        <div class="terms">
+            <!-- 在此处插入您的服务条款内容 -->
+        </div>
+        <div class="buttons">
+            <button onclick="alert('不同意')">不同意</button>
+            <button onclick="alert('同意')">同意</button>
+        </div>
+    </div>
+
+    <div><img src="图片/二维码/9.png" alt="二维码" style="position: relative; left: 1530px; top: 223.5px; width: 70px; height: 90px;"></div>
+
+    <p style="margin-left: 1110px;">185-8483-1521 客服热线 7X24小时 贴心服务</p>
+
+    <div class="footer">
+        <div>
+            <h3>时尚资讯</h3>
+            <a href="#">最新消息</a>
+            <a href="#">网站地图</a>
+            <a href="#">设计师简介</a>
+            <a href="#">品牌合作</a>
+            <a href="#">时尚活动</a>
+        </div>
+        <div>
+            <h3>店铺信息</h3>
+            <a href="#">隐私政策</a>
+            <a href="#">法律声明</a>
+            <a href="#">配送方式</a>
+            <a href="#">退换货政策</a>
+            <a href="#">联系我们</a>
+        </div>
+        <div>
+            <h3>注册会员</h3>
+            <a href="注册会员界面.html" class="yellow-rounded">点击注册成为会员</a>
+            <a href="#">会员权益</a>
+            <a href="#">会员等级</a>
+            <a href="#">积分兑换</a>
+            <a href="会员条款.html">会员条款</a>
+        </div>
+
+        
+    </div>
+    
+    <footer>
+        版权所有 &copy; 风尚时装
+    </footer>
+</body>
+
+<script>
+    document.getElementById('image').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'block';
+    });
+    document.getElementById('popup').addEventListener('click', function(event) {
+        if (event.target === this) {
+            this.style.display = 'none';
+        }
+    });
+    </script>
+</html>
