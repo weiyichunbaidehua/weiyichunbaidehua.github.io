@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风尚时装官方网站</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dibu.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-left: 0px; /* 添加这一行 */
+            padding: 1.5rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        nav {
+				background-color: #f1f1f1;
+				padding: 10px;
+			}
+
+			nav a {
+				text-decoration: none;
+				color: #333333;
+				font-size: 18px;
+				margin-right: 20px;
+			}
+
+			nav a:hover {
+				color: rgb(241, 196, 15);
+			}
+
+			.nav-active {
+				/* background-color: white; */
+                background-color: #777;
+				color: rgb(255, 255, 255);
+			}nav a.nav-item {
+	background-color: rgb(241, 196, 15);
+	color: rgb(255, 255, 255);
+}
+
+        form {
+            display: inline-block;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: rgb(241, 196, 15);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #888888;
+        }
+        
+        /*个人中心的那个图片*/
+        #myImage {
+            width: 40px; /* 修改图片宽度 */
+            height: 40px; /* 修改图片高度 */
+            position: absolute; /* 使用绝对定位 */
+            top: 95px; /* 离顶部距离 */
+            left: 1620px; /* 离左边界距离 */
+        }
+
+        /* 图片 */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0rem;
+        }
+
+        /* 时尚之都 */
+        .product {
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 1rem;
+            padding: 1rem;
+            
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加这一行 */
+            display: inline-block; /* 添加这一行 */
+        }
+
+        .logo {
+            margin-left: 1rem; /* 根据需要调整距离 */
+            width: 40px; /* 根据需要调整宽度 */
+            height: auto; /* 根据需要调整高度 */
+        }
+
+        
+        .right {/*111111111111111111111111111*/
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0.5rem 0;/*距离*/
+        }
+
+        .right a {
+            margin-right: 20px; /* 设置间距，可以根据需要调整 */
+            color: rgb(85, 85, 85); /* 设置字体颜色为黑色 */
+            text-decoration: none; /* 去掉下划线 */
+        }/*111111111111111111111111111*/
+        
+        /*圆角矩形*/
+        a.yellow-rounded {
+            color:rgb(0, 0, 0);
+            
+            width: 200px;
+            height: 30px;
+            background: rgb(255, 255, 255);
+           
+            line-height: 30px;
+            border-radius: 30px;
+        }
+        
+        /*下面的CSS都是*/
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-box {
+            margin: 5px;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .brand {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+      
+        h1 {
+            margin-top: 20px;
+            
+        }
+        .content {
+            display: flex;
+            flex-direction: row;
+            margin-top: 50px;
+            margin-left: 498px; /* 设置左边距为100像素 */
+        }
+        .image {
+            margin-right: 50px;
+        }
+        .text {
+            text-align: left;
+        }
+        hr {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        /*时尚之都 灰白色背景且有间距*/
+        h3 {
+           font-size: 24px;
+           font-weight: bold;
+           /*下面最大的字的颜色 color: #333;*/
+           margin-bottom: 10px;
+        }
+
+        p {
+           font-size: 16px;
+           line-height: 1.5;
+           color: #666;
+           margin-bottom: 20px;
+        }
+
+        /*下面都是隐藏目录CSS*/
+        #image {
+            cursor: pointer;
+            margin-left: 10px; /*向左移动*/
+            margin-top: -20px;/*与顶部距离*/
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 50px;/*边框大小*/
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            font-size: 20px;/*字体大小*/
+        }
+
+.pageBanner2 {
+  background-image: url(/d/file/2016-08-24/960e1743f18df1046bd5d8f8a742f283.png);
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wal {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/*新闻活动*/
+h1 {
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            box-sizing: border-box;
+        }
+        nav a.nav-item {
+	background-color: #777;
+	color: rgb(255, 255, 255);
+}
+
+/*下面是最底部的那个*/
+footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }/**/
+
+        </style>
+</head>
+<body>
+    
+    <a href="个人中心.html"><img src="图片/个人中心/12.png" alt="图片描述" id="myImage" style="margin-top: 8px;"></a>
+    
+    <header>
+        <h1 style="color:rgb(114, 118, 241);"><img class="logo" src="图片/logo/1.apng" alt="Logo"> 风尚时装官方网站</h1>
+        <!-- 添加logo -->
+    </header>
+    <nav>
+        <!-- <a href="#">品牌</a> -->
+        <a class="nav-item" href="2.html" style="background-color: rgb(241, 196, 15);">首页</a>
+        <a href="新品推荐.html">新品推荐</a>
+        <a href="女士外套.html">女士外套</a>
+        <a href="女士衬衫.html">女士衬衫</a>
+        <a href="女士半身裙.html">女士半身裙</a>
+        <a href="女士配饰.html">女士配饰</a>
+    <form action="搜索.html" method="get">
+        <input type="text" name="query" placeholder="搜索产品...">
+        <button type="submit">搜索</button>
+    </form>
+</nav>
+    
+    <!--隐藏目录-->
+    <div id="popup">
+        <div id="content">
+            <h3>目录</h3>
+                <li>NEW新品</li><!-- <li><a href="你的链接地址">NEW新品</a></li> -->
+                <li>按品牌搜索</li>
+                <li>按种类搜索</li>
+                <li>热销</li>
+                <li>LOOKBOOK</li>
+                <li>店铺信息</li>
+        </div>
+    </div>
+    
+    <div class="right">
+    <a href="联系我们.html">联系我们</a>
+    <a href="注册界面.html">注册</a>
+    <a href="登陆界面.html">登录</a>
+    <a href="收藏界面.html">❤收藏</a>
+    <a href="购物车.html">🛒购物车</a>
+    </div>
+    
+    <!--隐藏目录图片-->
+    <img id="image" src="图片/目录/4.png" width="70" height="25" alt="图像">
+
+    <div class="carousel">
+        <ul>
+          <span class="iconfont prev">&#xe600;</span>
+          <span class="iconfont next">&#xe601;</span>
+          <li class="now"><img src="https://theshopchina.oss-cn-shanghai.aliyuncs.com/img/brand/syte/2023aw/syte_23aw_01_pc_cn.jpg" alt="img1" /></li>
+          <li class="after"><img src="https://theshopchina.oss-cn-shanghai.aliyuncs.com/img/usr/top/mv/top_main_image1277.jpg" alt="img2" /></li>
+          <li><img src="https://theshopchina.oss-cn-shanghai.aliyuncs.com/img/brand/ys_for_living/2021ss/ysforliving_pc_2021ss.jpg" alt="img3" /></li>
+          <li><img src="https://theshopchina.oss-cn-shanghai.aliyuncs.com/img/brand/limifeu/2023aw/limi_23aw_pc_cn.jpg" alt="img4" /></li>
+          <li><img src="https://theshopchina.oss-cn-shanghai.aliyuncs.com/img/brand/maison/2023ss/yymaison_23ss_pc.jpg" alt="img5" /></li>
+          <li class="before"><img src="https://theshopchina.oss-cn-shanghai.aliyuncs.com/img/brand/discord/2023aw/discord_23aw_pc_cn.jpg" alt="img6" /></li>
+        </ul>
+        <div class="lines">
+          <div class="active-line line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    
+    
+
+    <div class="brand">行业新闻</div>
+    <div class="container">
+        <div class="card">
+            <h4>新闻一</h4><br />
+            <img src="图片/新闻/2.png" alt="活动三" style="width: 150px; height: 100px;"><br /><br />
+            <p>《全球跨境电商蓝图》将于今年6月发布</p >
+        </div>
+        <div class="card">
+            <h4>新闻二</h4><br />
+            <img src="图片/新闻/7.webp" alt="活动三" style="width: 150px; height: 100px;"><br /><br />
+            <p>Zara推出可持续发展系列，旨在减少对环境的影响</p >
+        </div>
+        <div class="card">
+            <h4>新闻三</h4><br />
+            <img src="图片/新闻/3.png" alt="活动三" style="width: 150px; height: 100px;"><br /><br />
+            <p>H&M、ZARA、优衣库、GAP：时尚潮流的四大巨头</p >
+        </div>
+        <div class="card">
+            <h4>新闻四</h4><br />
+            <img src="图片/新闻/6.jpg" alt="活动三" style="width: 150px; height: 100px;"><br /><br />
+            <p>直播带货成为服装行业的新趋势</p >
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h4>新闻五</h4><br />
+            <img src="图片/新闻/1.gif" alt="活动三" style="width: 150px; height: 100px;"><br /><br />
+            <p>"FSZS SS21：八大亮点，开启最强订货季"</p >
+        </div>
+        <div class="card">
+            <h4>新闻六</h4><br />
+            <img src="图片/新闻/8.webp" alt="活动三" style="width: 150px; height: 100px;"><br /><br />
+            <p>H&M与瑞典时装设计师合作，共同打造限量版环保服装系列</p >
+        </div>
+        <div class="card">
+            <h4>新闻七</h4><br />
+            <img src="图片/新闻/5.jpg" alt="活动三" style="width: 150px; height: 100px;"><br /><br />
+            <p>优衣库推出智能穿搭APP，助力消费者打造个性化形象</p >
+        </div>
+        <div class="card">
+            <h4>新闻八</h4><br />
+            <img src="图片/新闻/9.webp" alt="活动三" style="width: 150px; height: 100px;"><br /><br />
+            <p>阿里巴巴的新技术或许会让电商模特们集体"毕业"</p >
+        </div>
+    </div>
+
+    <div class="brand">新闻中心</div>
+    
+
+    <div class="container">
+        <div class="left">
+            <div class="item">
+                <img src="图片/竖排 图片/4.jpeg" alt="图片1">
+                <p>LIMI feu2023-24秋冬新款系列第四波：海军蓝和单色格纹系列将于10月6日（星期五）开始发售。<br /><br />
+                   采用时尚的单色调格纹组合，通过自如地运用单向褶皱、斜剪裁和垂感等各种细节处理，将锐利和阳刚之感融合于女性化的氛围之中。</p >
+            </div>
+            <div class="item">
+                <img src="图片/竖排 图片/5.jpeg" alt="图片2">
+                <p>LIMI feu 2023-24 秋冬系列第三版将于 9 月 1 日（周五）起在全国各地的 LIMI feu 商店和官方网上商店发售。<br /><br />
+                   格子呢总是既传统又充满未来感。 尤其是红色格子，散发出强烈的自我意识。 低腰处缝制的单向褶皱宽松起伏，使不对称的轮廓显得生动活泼。</p >
+            </div>
+        </div>
+    </div>
+    
+    <div class="brand">推荐品牌</div>
+    <div class="container">
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/1.jpg" alt="品牌或设计师名称1">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/2.jpg" alt="品牌或设计师名称2">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/3.jpg" alt="品牌或设计师名称3">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/4.jpg" alt="品牌或设计师名称4">
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/5.jpg" alt="品牌或设计师名称1">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/6.jpg" alt="品牌或设计师名称2">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/7.jpg" alt="品牌或设计师名称3">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/8.jpg" alt="品牌或设计师名称4">
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/9.jpg" alt="品牌或设计师名称1">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/10.jpg" alt="品牌或设计师名称2">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/11.jpg" alt="品牌或设计师名称3">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/12.jpg" alt="品牌或设计师名称4">
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/13.jpg" alt="品牌或设计师名称1">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/14.jpg" alt="品牌或设计师名称2">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/15.jpg" alt="品牌或设计师名称3">
+        </div>
+        <div class="image-box">
+            <img src="图片/品牌 图片展示/16.jpg" alt="品牌或设计师名称4">
+            <!-- <p>品牌或设计师名称4</p> -->
+        </div>
+    </div>
+
+    <h1 style="margin-left: 777px;">VIEW MORE</h1>
+    <div class="content">
+        <img src="图片/竖排 图片/1.jpeg" alt="模特图片" class="image">
+        <div class="text">
+            <p>Y's x CHICSTOCKS</p>
+            <p>Dec 08 2024</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <img src="图片/竖排 图片/2.jpeg" alt="模特图片" class="image">
+        <div class="text">
+            <p>Ys RESORT</p>
+            <p>Dec 05 2024</p>
+        </div>
+    </div>
+
+    <main>
+        <section>
+            
+        </section><div class="product"><div class="pageBanner2" style="background:url(/d/file/2016-08-24/960e1743f18df1046bd5d8f8a742f283.png) center no-repeat; background-size:cover;">
+            <div class="wal">
+              <div class="title"><div>关于我们</div></div>
+              欢迎来到风尚时装，这里是专注于女装的时尚店铺。我们提供最新潮流的服装款式，让您展现个人独特的时尚风格。
+                    我们的商品种类繁多，包括各种女士外套、毛衫、衬衫和配饰等等。<br /><br />在风尚时装，我们注重品质和细节。
+                    我们与多家知名品牌合作，确保每一件商品都是精心挑选的高品质产品。<br />
+                    我们还提供定制服务，根据您的需求为您量身打造独一无二的服装。</div>
+            </div>
+          </div>
+        </div>
+    </main>
+
+    <div><img src="图片/二维码/9.png" alt="小二维码" style="position: relative; left: 1530px; top: 200px; width: 70px; height: 90px;"></div>
+
+    <p style="margin-left: 1110px;">185-8483-1521 客服热线 7X24小时 贴心服务</p>
+
+    <div class="footer">
+        <div>
+            <h3>时尚资讯</h3>
+            <a href="#">最新消息</a>
+            <a href="#">网站地图</a>
+            <a href="#">设计师简介</a>
+            <a href="#">品牌合作</a>
+            <a href="#">时尚活动</a>
+        </div>
+        <div>
+            <h3>店铺信息</h3>
+            <a href="#">隐私政策</a>
+            <a href="#">法律声明</a>
+            <a href="#">配送方式</a>
+            <a href="#">退换货政策</a>
+            <a href="#">联系我们</a>
+        </div>
+        <div>
+            <h3>注册会员</h3>
+            <a href="注册会员界面.html" class="yellow-rounded">点击注册成为会员</a>
+            <a href="#">会员权益</a>
+            <a href="#">会员等级</a>
+            <a href="#">积分兑换</a>
+            <a href="会员条款.html">会员条款</a>
+        </div>
+
+    </div>
+
+    <footer>
+        版权所有 &copy; 风尚时装
+    </footer>
+</body>
+<!--隐藏目录-->
+<script>
+    document.getElementById('image').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'block';
+    });
+    document.getElementById('popup').addEventListener('click', function(event) {
+        if (event.target === this) {
+            this.style.display = 'none';
+        }
+    });
+</script>
+
+<script src="js/index.js"></script>
+</html>
