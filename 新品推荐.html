@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风尚时装官方网站</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    
+    .footer h3 {
+        margin-bottom: 10px;
+    }
+    
+    .footer div {
+        width: calc(100% / 3);
+        text-align: center;
+    }
+    
+    .footer div h3 {
+        margin-bottom: 20px;
+    }
+    
+    .footer div a {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+        /*下面都是导航栏*/
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-left: 0px; /* 添加这一行 */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        nav {
+				background-color: #f1f1f1;
+				padding: 10px;
+			}
+
+			nav a {
+				text-decoration: none;
+				color: #333333;
+				font-size: 18px;
+				margin-right: 20px;
+			}
+
+			nav a:hover {
+				color: rgb(241, 196, 15);
+			}
+
+			.nav-active {
+				/* background-color: white; */
+                background-color: #777;
+				color: rgb(255, 255, 255);
+			}nav a.nav-item {
+	background-color: rgb(241, 196, 15);
+	color: rgb(255, 255, 255);
+}
+
+            form {
+                display: inline-block;
+            }
+
+            input[type="text"] {
+                  padding: 5px;
+                  font-size: 16px;
+                  border: 1px solid #cccccc;
+                 border-radius: 5px;
+        }
+
+        /*那个搜索的颜色*/
+        button[type="submit"] {
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: rgb(241, 196, 15);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #888888;
+        }
+        
+        /*个人中心的那个图片*/
+        #myImage {
+            width: 40px; /* 修改图片宽度 */
+            height: 40px; /* 修改图片高度 */
+            position: absolute; /* 使用绝对定位 */
+            top: 95px; /* 离顶部距离 */
+            left: 1620px; /* 离左边界距离 */
+        }
+
+        footer p {
+            margin: 0;
+            padding: 5px;
+        }
+        /**/
+        footer p:first-child {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .logo {
+            margin-left: 1rem; /* 根据需要调整距离 */
+            width: 40px; /* 根据需要调整宽度 */
+            height: auto; /* 根据需要调整高度 */
+        }
+
+        
+        .right {/*111111111111111111111111111*/
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0.5rem 0;/*距离*/
+        }
+
+        .right a {
+            margin-right: 20px; /* 设置间距，可以根据需要调整 */
+            color: rgb(85, 85, 85); /* 设置字体颜色为黑色 */
+            text-decoration: none; /* 去掉下划线 */
+        }/*111111111111111111111111111*/
+        
+        /*圆角矩形*/
+        a.yellow-rounded {
+            color:rgb(0, 0, 0);
+            
+            width: 200px;
+            height: 30px;
+            background: rgb(255, 255, 255);
+           
+            line-height: 30px;
+            border-radius: 30px;
+        }
+
+        /*下面都是隐藏目录CSS*/
+        #image {
+            cursor: pointer;
+            margin-left: 10px; /*向左移动*/
+            margin-top: -20px;/*与顶部距离*/
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 50px;/*边框大小*/
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            font-size: 20px;/*字体大小*/
+        }
+
+        /*下面是最底部的那个*/
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }/**/
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .product {
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 1rem;
+            padding: 1rem;
+            width: 300px;
+         	 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         	 display: inline-block; /* 添加这一行 */
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product h3 {
+            margin: 0.5rem 0;
+        }
+        .product p {
+            margin: 0;
+        }
+        /* */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 15px;
+        }
+        dl {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        dt {
+            font-weight: bold;
+        }
+        dd {
+            margin-bottom: 10px;
+        }
+        /*分页器*/
+        .pagination {
+            display: inline-block;
+            margin-left: 480px;
+/*下面CSS可以全部删*/
+            display: flex;
+        justify-content: center;
+        padding: 0;
+        list-style-type: none;
+        margin: auto;
+        }
+        .pagination li {
+            display: inline;
+        }
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        a {
+            color:rgb(114, 118, 241); /* 红色 */
+        }
+
+      </style>
+</head>
+<body>
+    <a href="个人中心.html"><img src="个人中心/12.png" alt="图片描述" id="myImage" style="margin-top: 8px;"></a>
+    
+    <header>
+        <h1 style="color:rgb(114, 118, 241);"><img class="logo" src="logo/1.apng" alt="Logo"> 风尚时装官方网站</h1>
+        <!-- 添加logo -->
+    </header>
+    <nav>
+        <!-- <a href="#">品牌</a> -->
+        <a href="index.html">首页</a>
+        <a class="nav-item" href="新品推荐.html">新品推荐</a>
+        <a href="女士外套.html">女士外套</a>
+        <a href="女士衬衫.html">女士衬衫</a>
+        <a href="女士半身裙.html">女士半身裙</a>
+        <a href="女士配饰.html">女士配饰</a>
+    <form action="搜索.html" method="get">
+        <input type="text" name="query" placeholder="搜索产品...">
+        <button type="submit">搜索</button>
+    </form>
+</nav>
+    
+    <!--隐藏目录-->
+    <div id="popup">
+        <div id="content">
+            <h3>目录</h3>
+                <li>NEW新品</li><!-- <li><a href="你的链接地址">NEW新品</a></li> -->
+                <li>按品牌搜索</li>
+                <li>按种类搜索</li>
+                <li>热销</li>
+                <li>LOOKBOOK</li>
+                <li>店铺信息</li>
+        </div>
+    </div>
+    
+    <div class="right">
+    <a href="联系我们.html">联系我们</a>
+    <a href="注册界面.html">注册</a>
+    <a href="登陆界面.html">登录</a>
+    <a href="收藏界面.html">❤收藏</a>
+    <a href="购物车.html">🛒购物车</a>
+    </div>
+    
+    <!--隐藏目录图片-->
+    <img id="image" src="目录/4.png" width="70" height="25" alt="图像">
+
+    <main>
+        <section>
+            <div class="product">
+                <img src="新品推荐/1.jpg" alt="1">
+                <h3>平绒长外套</h3>
+                <p>价格：￥3,722</p ><a href="#" style="position: absolute; text-decoration: none; left: 1485px; top: 720.5px;">商品详情</a>
+            </div>
+            <div class="product">
+                <img src="新品推荐/2.jpg" alt="2">
+                <h3>系带锁扣大衣</h3>
+                <p>价格：￥3,498</p ><a href="#" style="position: absolute; text-decoration: none; left: 1115px; top: 720.5px;">商品详情</a>
+            </div>
+            <div class="product">
+                <img src="新品推荐/3.jpg" alt="3">
+                <h3>蝴蝶结领衬衫</h3>
+                <p>价格：￥1,347</p ><a href="#" style="position: absolute; text-decoration: none; left: 745px; top: 720.5px;">商品详情</a>
+            </div>
+            <div class="product">
+                <img src="新品推荐/4.gif" alt="4">
+                <h3>宽领宽松衬衫</h3>
+                <p>价格：￥962</p ><a href="#" style="position: absolute; text-decoration: none; left: 375px; top: 720.5px;">商品详情</a>
+            </div>
+        </section>
+        <section>
+            <div class="product">
+                <img src="新品推荐/5.jpg" alt="5">
+                <h3>羊毛喇叭裙</h3>
+                <p>价格：￥4,255</p ><a href="#" style="position: absolute; text-decoration: none; left: 375px; top: 1280.5px;">商品详情</a>
+            </div>
+            <div class="product">
+                <img src="新品推荐/6.jpg" alt="6">
+                <h3>羊毛不对称喇叭裙</h3>
+                <p>价格：￥8,100</p ><a href="#" style="position: absolute; text-decoration: none; left: 745px; top: 1280.5px;">商品详情</a>
+            </div>
+            <div class="product">
+                <img src="新品推荐/7.jpg" alt="7">
+                <h3>骷髅玫瑰浴巾</h3>
+                <p>价格：￥2,599</p ><a href="#" style="position: absolute; text-decoration: none; left: 1115px; top: 1280.5px;">商品详情</a>
+            </div>
+            <div class="product">
+                <img src="新品推荐/8.jpg" alt="8">
+                <h3>鸽子浴巾</h3>
+                <p>价格：￥2,599</p ><a href="#" style="position: absolute; text-decoration: none; left: 1485px; top: 1280.5px;">商品详情</a>
+            </div>
+        </section>
+    </main>
+    
+        <ul class="pagination">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">下一页</a></li>
+        </ul>
+
+    <footer>
+        <h2>常见问题解答</h2>
+    <dl>
+        <dt>问题1：订单何时发货？</dt>
+        <dd>回答1：一般情况下，我们会在收到您的付款后的3个工作日内发货。但是，如果您的订单比较紧急，我们也会尽快处理并发货。</dd>
+        
+        <dt>问题2：退货政策是什么？</dt>
+        <dd>回答2：我们的退货政策是，如果您对购买的商品不满意，可以在收到商品后的7天内申请退货。退货时需要保证商品的原状和包装完整。</dd>
+    </dl>
+    </footer>
+
+    <div><img src="二维码/9.png" alt="小二维码" style="position: relative; left: 1530px; top: 233px; width: 70px; height: 90px;"></div>
+
+    <p style="margin-left: 1110px;">185-8483-1521 客服热线 7X24小时 贴心服务</p>
+
+    <div class="footer">
+        <div>
+            <h3>时尚资讯</h3>
+            <a href="#">最新消息</a>
+            <a href="#">网站地图</a>
+            <a href="#">设计师简介</a>
+            <a href="#">品牌合作</a>
+            <a href="#">时尚活动</a>
+        </div>
+        <div>
+            <h3>店铺信息</h3>
+            <a href="#">隐私政策</a>
+            <a href="#">法律声明</a>
+            <a href="#">配送方式</a>
+            <a href="#">退换货政策</a>
+            <a href="#">联系我们</a>
+        </div>
+        <div>
+            <h3>注册会员</h3>
+            <a href="注册会员界面.html" class="yellow-rounded">点击注册成为会员</a>
+            <a href="#">会员权益</a>
+            <a href="#">会员等级</a>
+            <a href="#">积分兑换</a>
+            <a href="2.html">会员条款</a>
+        </div>
+
+        
+    </div>
+    
+    <footer>
+        版权所有 &copy; 风尚时装
+    </footer>
+</body>
+
+<script>
+    document.getElementById('image').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'block';
+    });
+    document.getElementById('popup').addEventListener('click', function(event) {
+        if (event.target === this) {
+            this.style.display = 'none';
+        }
+    });
+    </script>
+</html>
+<!--
+    添加联系表单
+    <form action="submit_form.php" method="post">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">邮箱：</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="message">留言：</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+        
+        <input type="submit" value="提交">
+    </form>
+
+<dt>问题1：如何下单？</dt>
+        <dd>回答1：您可以在我们的网站上选择您想要的商品，然后点击“加入购物车”按钮。接着，您可以在购物车页面点击“去结算”按钮完成下单。</dd>
+-->
